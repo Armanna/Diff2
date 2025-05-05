@@ -1,0 +1,28 @@
+export S3_EXPORTER_ENABLED=false
+export PERIOD=day # need to change this env var depending on what report you try to build - month/week/day/quarter
+export RUN_DATE=$(date +"%Y-%m-%d")
+
+export EMAIL_EXPORTER_ENABLED=false
+export INTER_PERIOD_FLAG='False'
+
+export PHARMACY_HISTORY_BUCKET=etl-pharmacy-${HSDK_ENV_ID}
+export PHARMACY_HISTORY_PREFIX=export/history/
+
+export FINANCIAL_CLAIMS_BUCKET=etl-financial-claims-${HSDK_ENV_ID}
+export FINANCIAL_CLAIMS_PREFIX=exports/
+export FINANCIAL_CLAIMS_SCHEMA=financial_claims
+export FINANCIAL_CLAIMS_TEMP_FILES_PREFIX=temp/${PERIOD}/
+
+export PBM_HIPPO_BUCKET=etl-pbm-hippo-${HSDK_ENV_ID}
+export PBM_HIPPO_EXPORT_PREFIX=exports/
+export PBM_HIPPO_EXPORT_HISTORY_PREFIX=exports/history/
+
+#GoodRx 'synthetic_fee_per_fill' coefficients:
+export NEW_CHANGE_HEALTHCARE_FEE_PERCENTAGE_SPLIT='0.5'
+export OLD_CHANGE_HEALTHCARE_PER_CLAIM_FEE_DOLLARS='1.41'
+#GoodRx 'processor_fee_deductable':
+export GOODRX_PROCESSOR_FEE_DEDUCTABLE_CENTS='12'
+#GoodRx 'partner_margin' standard margin:
+export GOODRX_ABSOLUTE_MIN_MARGIN_DOLLARS='5.7'
+export GOODRX_MARGIN_PERCENT='0.9'
+export GOODRX_MARGIN_FOR_WALMART_PERCENT='0.97'

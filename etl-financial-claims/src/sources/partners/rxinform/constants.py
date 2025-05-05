@@ -1,0 +1,4 @@
+from decimal import *
+
+PARTNER_MARGIN_PER_CLAIM_PARTNER_PERCENT = Decimal("0.4")
+PARTNER_MARGIN_PER_CLAIM_HIPPO_PERCENT = Decimal("0.6")
